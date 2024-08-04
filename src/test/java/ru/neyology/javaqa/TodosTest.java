@@ -105,7 +105,7 @@ public class TodosTest {
     }
 
     @Test
-    public void shouldSearch() {
+    public void shouldSearchNull() {
         SimpleTask simpleTask = new SimpleTask(5, "Позвонить родителям");
 
         String[] subtasks = {"Молоко", "Яйца", "Хлеб"};
@@ -129,7 +129,7 @@ public class TodosTest {
         Assertions.assertArrayEquals(expected, actual);
     }
     @Test
-    public void shouldSearchпss() {
+    public void shouldSearch2Task() {
         SimpleTask simpleTask = new SimpleTask(5, "Позвонить родителям");
 
         String[] subtasks = {"Молоко", "Яйца", "Хлеб"};
@@ -148,8 +148,8 @@ public class TodosTest {
         todos.add(epic);
         todos.add(meeting);
 
-        Task[] expected = {};
-        Task[] actual = todos.search("  ");
+        Task[] expected = {simpleTask,meeting};
+        Task[] actual = todos.search(" ");
         Assertions.assertArrayEquals(expected, actual);
     }
 }
